@@ -21,7 +21,7 @@ class Tarefa:
 
     @classmethod
     def id(cls, id: int) -> Self:
-        with Database('./data/tarefas.sqlite3') as db:
+        with Database() as db:
             query: str = 'SELECT titulo_tarefa, data_conclusao FROM tarefas WHERE id = ?;'
             params: tuple = (id,)
             resultado: list[Any] = db.buscar_tudo(query, params)
