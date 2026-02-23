@@ -30,6 +30,21 @@ def delete(idTarefa):
     # return render_template('agenda.html', titulo="Agenda", tarefas=tarefas)
     return redirect(url_for('agenda'))
 
+
+@app.route('/concluida/<int:idTarefa>')
+def concluida(idTarefa):
+    tarefa = Tarefa.id(idTarefa)
+    tarefa.completar_tarefa()
+    return redirect(url_for('agenda'))
+
+@app.route('/reabrir/<int:idTarefa>', methods=['GET', 'POST'])
+def reabrir(idTarefa):
+    tarefa = Tarefa.id(idTarefa)
+    tarefa.reabrir_tarefa()
+    return redirect(url_for('agenda'))
+
+
+
 @app.route('/update/<int:idTarefa>', methods=['GET', 'POST'])
 def update(idTarefa):
     tarefas = None
