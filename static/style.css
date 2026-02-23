@@ -46,6 +46,16 @@ button{
     border-color:#c7c4de;
 }
 
+.tarefa-finalizada{
+    background-color: white;
+    color: black;
+    text-decoration: line-through;
+}
+.nao-concluir{
+    background-color: white;
+    color: black;
+}
+
 .Notas{
     position: fixed;
     font-size: 2rem;
@@ -63,3 +73,5 @@ button{
 50% { opacity: 1; transform: scale(1.1) rotate(20deg); }
 100% { opacity: 0.2; transform: scale(0.9) rotate(-20deg); }
         }
+
+
