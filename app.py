@@ -49,7 +49,7 @@ def update(idTarefa):
     if request.method == "POST":
         titulo = request.form["titulo-tarefa"]
         data = request.form["data-conclusao"]
-        tarefa = Tarefa(titulo, data, idTarefa)
+        tarefa = Tarefa(titulo, data,id_tarefa=idTarefa)
         tarefa.atualizar_tarefa()
         return redirect(url_for("agenda"))
 
